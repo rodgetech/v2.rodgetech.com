@@ -1,23 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
-import { WORK_EXPERIENCE } from "@/config/site";
+import { WORK_EXPERIENCE, USER } from "@/config/site";
+import { Button } from "@/components/ui/button";
 
 export function WorkExperienceSection() {
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex flex-col gap-2">
-        <h2 className="font-heading text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
-          Previously @
-        </h2>
-        <p className="text-sm text-zinc-600 dark:text-zinc-400">
-          To see all my work experience,{" "}
-          <Link
-            href={WORK_EXPERIENCE.resumeUrl}
-            className="underline hover:text-zinc-900 dark:hover:text-zinc-50"
-          >
-            download resume
-          </Link>
-        </p>
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col gap-2">
+          <h2 className="font-heading text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+            Previously @
+          </h2>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            To see all my work experience,{" "}
+            <Link
+              href={WORK_EXPERIENCE.resumeUrl}
+              className="underline hover:text-zinc-900 dark:hover:text-zinc-50"
+            >
+              download resume
+            </Link>
+          </p>
+        </div>
+        <Button asChild>
+          <Link href={`mailto:${USER.email}`}>Hire Me</Link>
+        </Button>
       </div>
       <div className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-6">
         <div className="flex flex-col gap-4">

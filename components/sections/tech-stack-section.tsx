@@ -11,9 +11,14 @@ export function TechStackSection() {
 
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="font-heading text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
-        Tech Stack
-      </h2>
+      <div className="flex flex-col gap-2">
+        <h2 className="font-heading text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+          Tech Stack
+        </h2>
+        <p className="text-sm text-zinc-600 dark:text-zinc-400">
+          Technologies and tools I use to build applications.
+        </p>
+      </div>
       <div className="flex flex-col">
         {rows.map((row, rowIndex) => (
           <div key={rowIndex}>
