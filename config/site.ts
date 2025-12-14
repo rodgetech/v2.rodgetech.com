@@ -34,7 +34,7 @@ export const USER = {
   ogImage:
     "https://assets.chanhdai.com/images/screenshot-og-image-light.png?t=1764345394",
   namePronunciationUrl: "/audio/chanhdai.mp3",
-  timeZone: "Asia/Ho_Chi_Minh",
+  timeZone: "America/Belize",
   keywords: ["rodgetech", "luis rodriguez", "luis", "rodriguez"],
   dateCreated: "2025-12-14", // YYYY-MM-DD
 };

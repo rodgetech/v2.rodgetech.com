@@ -137,3 +137,54 @@
     display: none;
   }
 }
+
+/* Vertical dashed grid for sections - spans full height from top to bottom separator */
+.section-grid {
+  --grid-color: oklch(0.85 0 0);
+  --grid-dash-size: 4px;
+  --grid-gap-size: 6px;
+  background-image: repeating-linear-gradient(
+      to bottom,
+      var(--grid-color) 0,
+      var(--grid-color) var(--grid-dash-size),
+      transparent var(--grid-dash-size),
+      transparent calc(var(--grid-dash-size) + var(--grid-gap-size))
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--grid-color) 0,
+      var(--grid-color) var(--grid-dash-size),
+      transparent var(--grid-dash-size),
+      transparent calc(var(--grid-dash-size) + var(--grid-gap-size))
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      var(--grid-color) 0,
+      var(--grid-color) var(--grid-dash-size),
+      transparent var(--grid-dash-size),
+      transparent calc(var(--grid-dash-size) + var(--grid-gap-size))
+    );
+  background-size: 1px 100%, 1px 100%, 1px 100%;
+  background-position: 25% 0, 50% 0, 75% 0;
+  background-repeat: repeat-y;
+}
+
+.dark .section-grid {
+  --grid-color: oklch(0.25 0 0);
+}
+
+/* Responsive: reduce grid lines on mobile */
+@media (max-width: 640px) {
+  .section-grid {
+    background-position: 50% 0;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--grid-color) 0,
+      var(--grid-color) var(--grid-dash-size),
+      transparent var(--grid-dash-size),
+      transparent calc(var(--grid-dash-size) + var(--grid-gap-size))
+    );
+    background-size: 1px 100%;
+    opacity: 0.5;
+  }
+}

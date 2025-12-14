@@ -6,8 +6,8 @@ export function HeroSection() {
   return (
     <div className="relative w-full">
       {/* Navigation */}
-      <nav className="absolute top-0 left-0 right-0 z-10 px-6 py-6 sm:px-12">
-        <div className="mx-auto w-full max-w-4xl flex justify-end">
+      <nav className="absolute top-0 left-0 right-0 z-10 py-6">
+        <div className="mx-auto w-full max-w-4xl px-6 sm:px-12 flex justify-end">
           <div className="flex items-center gap-6">
             <Link
               href="#work-experience"
@@ -38,8 +38,8 @@ export function HeroSection() {
       </div>
 
       {/* Profile Section */}
-      <div className="relative -mt-16 px-6 sm:px-12">
-        <div className="mx-auto max-w-4xl">
+      <div className="relative -mt-16">
+        <div className="mx-auto max-w-4xl px-6 sm:px-12">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:gap-8">
             {/* Profile Picture */}
             <div className="relative h-32 w-32 shrink-0 sm:h-40 sm:w-40">

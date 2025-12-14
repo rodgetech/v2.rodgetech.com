@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export function LetsTalkSection() {
   return (
-    <div id="lets-chat" className="flex flex-col gap-4 scroll-mt-12">
+    <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-2">
         <h2 className="font-heading text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
           Let&apos;s Talk

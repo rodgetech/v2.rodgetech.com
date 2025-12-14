@@ -4,7 +4,7 @@ import { WORK_EXPERIENCE } from "@/config/site";
 
 export function WorkExperienceSection() {
   return (
-    <div id="work-experience" className="flex flex-col gap-4 scroll-mt-12">
+    <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-2">
         <h2 className="font-heading text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
           Previously @

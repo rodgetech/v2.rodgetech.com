@@ -8,7 +8,8 @@ import {
   TechStackSection,
   LetsTalkSection,
 } from "@/components/sections";
-import { FlickeringFooter } from "@/components/ui/flickering-footer";
+import { USER } from "@/config/site";
+import { PageSection } from "@/components/ui/page-section";
 
 type Response = {
   total: Record<number, number>;
@@ -52,19 +53,39 @@ export default async function Home() {
       <HeroSection />
 
       {/* Main Content */}
-      <main className="mx-auto w-full max-w-4xl flex-1 px-6 py-12 sm:px-12">
-        <div className="w-full flex flex-col gap-12">
+      <main className="mx-auto w-full max-w-4xl flex-1 px-6 sm:px-12">
+        <PageSection hideGrid className="mt-8">
           <BioSection />
-          <SocialLinksSection />
-          <WorkExperienceSection />
-          <GitHubActivitySection contributions={contributions} total={total} />
-          <TechStackSection />
-          <LetsTalkSection />
-        </div>
-      </main>
+        </PageSection>
 
-      {/* Footer */}
-      <FlickeringFooter />
+        <PageSection>
+          <SocialLinksSection />
+        </PageSection>
+
+        <PageSection id="work-experience">
+          <WorkExperienceSection />
+        </PageSection>
+
+        <PageSection>
+          <GitHubActivitySection contributions={contributions} total={total} />
+        </PageSection>
+
+        <PageSection>
+          <TechStackSection />
+        </PageSection>
+
+        <PageSection id="lets-chat">
+          <LetsTalkSection />
+        </PageSection>
+
+        {/* Footer */}
+        <PageSection showBottomSeparator hideGrid>
+          <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
+            © {new Date().getFullYear()} {USER.displayName}. All rights
+            reserved.
+          </p>
+        </PageSection>
+      </main>
     </div>
   );
 }
