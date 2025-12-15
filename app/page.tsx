@@ -6,6 +6,7 @@ import {
   WorkExperienceSection,
   GitHubActivitySection,
   TechStackSection,
+  ProjectsSection,
   LetsTalkSection,
 } from "@/components/sections";
 import { USER } from "@/config/site";
@@ -74,16 +75,28 @@ export default async function Home() {
           <TechStackSection />
         </PageSection>
 
+        <PageSection id="projects">
+          <ProjectsSection />
+        </PageSection>
+
         <PageSection id="lets-chat">
           <LetsTalkSection />
         </PageSection>
 
         {/* Footer */}
         <PageSection showBottomSeparator hideGrid>
-          <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
-            © {new Date().getFullYear()} {USER.displayName}. All rights
-            reserved.
-          </p>
+          <div className="flex flex-col gap-2 items-center">
+            <p className="text-center text-sm text-zinc-500 dark:text-zinc-400">
+              © {new Date().getFullYear()} {USER.displayName}. All rights
+              reserved.
+            </p>
+            <a
+              href={`mailto:${USER.email}`}
+              className="text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors"
+            >
+              {USER.email}
+            </a>
+          </div>
         </PageSection>
       </main>
     </div>

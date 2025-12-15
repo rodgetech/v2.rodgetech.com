@@ -103,3 +103,35 @@ export const TECH_STACK = [
   { name: "Ruby", icon: "/stack/ruby.svg" },
   { name: "Ruby on Rails", icon: "/stack/rubyonrails.svg" },
 ];
+
+export const PROJECTS = [
+  {
+    name: "Ext Gaps",
+    description: `
+      Find gaps in existing chrome extensions. 
+      This is a useful tool that you can use to determine if there are any opportunities to build 
+      a similar extension but with your own twist. It does this by scraping the extension reviews 
+      and formulates a gap score.`,
+    url: "https://extgaps.vercel.app/",
+    image: "/projects/extgaps.png",
+    techStack: ["Next.js", "Upstash", "Firecrawl SDK", "Vercel", "Claude Code"],
+  },
+  {
+    name: "Screen Mockups",
+    description: `A comprehensive SaaS to generate beautiful mobile app screen designs using AI. 
+      You can use it to quickly generate screen designs for your app ideas, iterate on them, and export as static images or copy directly to Figma.`,
+    url: "https://screenmockups.app/",
+    image: "/projects/screenmockups.png",
+    techStack: [
+      "React",
+      "Express.js",
+      "Clerk",
+      "Dodo",
+      "Netlify",
+      "OpenRouter",
+      "Supabase",
+      "Fly.io",
+      "Cursor",
+    ],
+  },
+];

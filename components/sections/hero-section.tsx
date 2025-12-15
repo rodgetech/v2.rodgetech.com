@@ -1,9 +1,36 @@
+"use client";
+
+import { useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useScroll, useTransform } from "motion/react";
 import { USER } from "@/config/site";
 import { TimeDisplay } from "@/components/ui/time-display";
 
 export function HeroSection() {
+  const { scrollY } = useScroll();
+
+  // Parallax effect: image moves slower than scroll (0.5x speed)
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
+
+  const handleSmoothScroll = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      const href = e.currentTarget.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        const targetId = href.slice(1);
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      }
+    },
+    []
+  );
+
   return (
     <div className="relative w-full">
       {/* Navigation */}
@@ -12,12 +39,21 @@ export function HeroSection() {
           <div className="flex items-center gap-6">
             <Link
               href="#work-experience"
+              onClick={handleSmoothScroll}
               className="text-sm font-medium text-white transition-colors hover:text-white/80"
             >
               Work experience
             </Link>
             <Link
+              href="#projects"
+              onClick={handleSmoothScroll}
+              className="text-sm font-medium text-white transition-colors hover:text-white/80"
+            >
+              Projects
+            </Link>
+            <Link
               href="#lets-chat"
+              onClick={handleSmoothScroll}
               className="text-sm font-medium text-white transition-colors hover:text-white/80"
             >
               Let&apos;s chat
@@ -27,19 +63,21 @@ export function HeroSection() {
       </nav>
 
       <div className="relative h-64 w-full overflow-hidden sm:h-80">
-        <Image
-          src="/cover.jpeg"
-          alt="Cover"
-          fill
-          className="object-cover object-bottom"
-          priority
-        />
+        <motion.div style={{ y }} className="absolute inset-0 h-[120%]">
+          <Image
+            src="/cover.jpeg"
+            alt="Cover"
+            fill
+            className="object-cover object-bottom"
+            priority
+          />
+        </motion.div>
         {/* Gradient fade overlay */}
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent via-zinc-50/50 to-zinc-50 dark:via-zinc-950/50 dark:to-zinc-950" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent via-zinc-50/50 to-zinc-50 dark:via-zinc-950/50 dark:to-zinc-950 z-[1]" />
       </div>
 
       {/* Profile Section */}
-      <div className="relative -mt-16">
+      <div className="relative -mt-16 z-10">
         <div className="mx-auto max-w-4xl px-6 sm:px-12">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:gap-8">
             {/* Profile Picture */}
