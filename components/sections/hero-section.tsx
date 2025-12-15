@@ -103,11 +103,13 @@ export function HeroSection() {
               <p className="text-lg text-zinc-600 dark:text-zinc-400">
                 {USER.jobTitle}
               </p>
-              <p className="text-sm text-zinc-500 dark:text-zinc-500 flex items-center gap-2">
+              <div className="text-sm text-zinc-500 dark:text-zinc-500 flex flex-col sm:flex-row sm:items-center gap-2">
                 <span>Belize, Central America</span>
-                <span className="text-zinc-300 dark:text-zinc-600">•</span>
+                <span className="text-zinc-300 dark:text-zinc-600 hidden sm:inline">
+                  •
+                </span>
                 <TimeDisplay timeZone={USER.timeZone} />
-              </p>
+              </div>
             </div>
           </div>
         </div>

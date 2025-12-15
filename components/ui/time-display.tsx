@@ -80,13 +80,15 @@ export function TimeDisplay({ timeZone }: TimeDisplayProps) {
   }, [timeZone]);
 
   return (
-    <span className="inline-flex items-center gap-2 text-sm">
-      <Clock className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
+    <span className="inline-flex items-center gap-1.5 text-sm whitespace-nowrap">
+      <Clock className="h-4 w-4 shrink-0 text-zinc-500 dark:text-zinc-400" />
       <span className="font-semibold text-zinc-900 dark:text-zinc-50">
         {time}
       </span>
       <span className="text-zinc-400 dark:text-zinc-500">//</span>
-      <span className="text-zinc-500 dark:text-zinc-400">{timeDiff}</span>
+      <span className="text-zinc-500 dark:text-zinc-400 whitespace-nowrap">
+        {timeDiff}
+      </span>
     </span>
   );
 }
