@@ -35,29 +35,31 @@ export function HeroSection() {
   return (
     <div className="relative w-full">
       {/* Navigation */}
-      <nav className="absolute top-0 left-0 right-0 z-10 py-6">
-        <div className="mx-auto w-full max-w-4xl px-6 sm:px-12 flex justify-end">
-          <div className="flex items-center gap-6">
+      <nav className="absolute top-0 left-0 right-0 z-10 py-5 sm:py-6">
+        <div className="mx-auto w-full max-w-4xl px-5 sm:px-12 flex justify-end">
+          <div className="flex items-center gap-3 sm:gap-6">
             <Link
               href="#work-experience"
               onClick={handleSmoothScroll}
-              className="text-sm font-medium text-white transition-colors hover:text-white/80"
+              className="text-sm font-medium text-white transition-colors hover:text-white/80 whitespace-nowrap"
             >
-              Work experience
+              <span className="hidden sm:inline">Work experience</span>
+              <span className="sm:hidden">Work</span>
             </Link>
             <Link
               href="#projects"
               onClick={handleSmoothScroll}
-              className="text-sm font-medium text-white transition-colors hover:text-white/80"
+              className="text-sm font-medium text-white transition-colors hover:text-white/80 whitespace-nowrap"
             >
               Projects
             </Link>
             <Link
               href="#lets-chat"
               onClick={handleSmoothScroll}
-              className="text-sm font-medium text-white transition-colors hover:text-white/80"
+              className="text-sm font-medium text-white transition-colors hover:text-white/80 whitespace-nowrap"
             >
-              Let&apos;s chat
+              <span className="hidden sm:inline">Let&apos;s chat</span>
+              <span className="sm:hidden">Chat</span>
             </Link>
             <ThemeToggle />
           </div>
