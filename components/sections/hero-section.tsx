@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, useScroll, useTransform } from "motion/react";
 import { USER } from "@/config/site";
 import { TimeDisplay } from "@/components/ui/time-display";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export function HeroSection() {
   const { scrollY } = useScroll();
@@ -58,6 +59,7 @@ export function HeroSection() {
             >
               Let&apos;s chat
             </Link>
+            <ThemeToggle />
           </div>
         </div>
       </nav>
