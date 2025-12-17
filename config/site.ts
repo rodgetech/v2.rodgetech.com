@@ -77,17 +77,22 @@ export const WORK_EXPERIENCE = {
 };
 
 export const TECH_STACK = [
+  // Programming languages
   { name: "TypeScript", icon: "/stack/typescript.svg" },
+  { name: "JavaScript", icon: "/stack/javascript.svg" },
+  { name: "Python", icon: "/stack/python.svg" },
+  { name: "Ruby", icon: "/stack/ruby.svg" },
+  // Frameworks
   { name: "React", icon: "/stack/react.svg" },
   { name: "Next.js", icon: "/stack/nextjs.svg" },
   { name: "Tailwind CSS", icon: "/stack/tailwindcss.svg" },
+  { name: "NestJS", icon: "/stack/nestjs.svg" },
+  { name: "Ruby on Rails", icon: "/stack/rubyonrails.svg" },
+  // Infrastructures
   { name: "PostgreSQL", icon: "/stack/postgresql.svg" },
   { name: "AWS", icon: "/stack/aws.svg" },
-  { name: "JavaScript", icon: "/stack/javascript.svg" },
-  { name: "NestJS", icon: "/stack/nestjs.svg" },
-  { name: "Python", icon: "/stack/python.svg" },
-  { name: "Ruby", icon: "/stack/ruby.svg" },
-  { name: "Ruby on Rails", icon: "/stack/rubyonrails.svg" },
+  { name: "Supabase", icon: "/stack/supabase.png" },
+  { name: "Convex", icon: "/stack/convex.png" },
 ];
 
 export const PROJECTS = [
