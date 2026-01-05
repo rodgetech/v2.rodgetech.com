@@ -73,7 +73,7 @@ export const WORK_EXPERIENCE = {
       "Collaborated with cross-functional teams to improve user experience on BuildShip's platform",
     ],
   },
-  resumeUrl: "#", // Placeholder - update with actual resume URL
+  resumeUrl: "/resume.pdf",
 };
 
 export const TECH_STACK = [

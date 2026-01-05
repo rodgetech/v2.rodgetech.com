@@ -13,12 +13,13 @@ export function WorkExperienceSection() {
           </h2>
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
             To see all my work experience,{" "}
-            <Link
+            <a
               href={WORK_EXPERIENCE.resumeUrl}
+              download
               className="underline hover:text-zinc-900 dark:hover:text-zinc-50"
             >
               download resume
-            </Link>
+            </a>
           </p>
         </div>
         <Button asChild>
